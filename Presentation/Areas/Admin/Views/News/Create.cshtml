@@ -1,0 +1,81 @@
+﻿@using Business.ViewModels.News
+@model NewsCreateVM
+
+<form enctype="multipart/form-data" method="post" asp-action="Create" asp-controller="News">
+    <div class="form-group">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" placeholder="Enter title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Body" class="form-label"></label>
+        <textarea asp-for="Body" class="form-control" placeholder="Enter context"></textarea>
+        <span asp-validation-for="Body"></span>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label asp-for="Photo" class="form-label"></label>
+        <input asp-for="Photo" class="form-control" placeholder="Select Photo" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+    <button type="submit" id="submitButton" class="btn btn-primary mt-3">Create</button>
+    <a asp-action="Index" asp-controller="News" class="btn btn-danger mt-3">Back</a>
+</form>
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.css" />
+}
+
+@section Scripts {
+    @* <script src="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.umd.js"></script> *@
+
+   @*  <script>
+        const {
+            ClassicEditor,
+            Essentials,
+            Bold,
+            Italic,
+            Font,
+            Paragraph
+        } = CKEDITOR;
+
+        let editor;
+
+        ClassicEditor
+            .create(document.querySelector('#element'), {
+                licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjU0MTExOTksImp0aSI6IjVkMTA5MjdmLTY0ZjYtNDdjOC1hOWEzLTNkMjdlNjY4M2UzMCIsImxpY2Vuc2VkSG9zdHMiOlsiMTI3LjAuMC4xIiwibG9jYWxob3N0IiwiMTkyLjE2OC4qLioiLCIxMC4qLiouKiIsIjE3Mi4qLiouKiIsIioudGVzdCIsIioubG9jYWxob3N0IiwiKi5sb2NhbCJdLCJ1c2FnZUVuZHBvaW50IjoiaHR0cHM6Ly9wcm94eS1ldmVudC5ja2VkaXRvci5jb20iLCJkaXN0cmlidXRpb25DaGFubmVsIjpbImNsb3VkIiwiZHJ1cGFsIl0sImxpY2Vuc2VUeXBlIjoiZGV2ZWxvcG1lbnQiLCJmZWF0dXJlcyI6WyJEUlVQIiwiQk9YIl0sInZjIjoiNTJlNDQwMWYifQ.YsaPRFTmxGQualqtRyI5zIl-YyjZkPR-7iJaivG-05IH9hhMXpFokyKxxdbJDx-8qOjV1LwpMZ_WEIsI4lq7eQ',
+                plugins: [Essentials, Bold, Italic, Font, Paragraph],
+                toolbar: [
+                    'undo', 'redo', '|', 'bold', 'italic', '|',
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                ],
+            })
+            .then(createdEditor => {
+                editor = createdEditor; // Assign the editor instance to the variable
+            })
+            .catch(error => console.error('Editor initialization error:', error));
+
+        document.querySelector('#submitButton').addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            if (editor) {
+                const editorData = editor.getData(); // Get the HTML content from the editor
+                console.log('Editor Data (HTML):', editorData);
+
+                // Remove HTML tags to get plain text
+                const plainText = editorData.replace(/<[^>]*>?/gm, '');
+                console.log('Plain Text:', plainText);
+
+                // Update the value of the textarea with the plain text (optional)
+                const textarea = document.querySelector('#Body');
+                textarea.value = plainText;
+
+                // Optionally, submit the form data
+                const form = document.querySelector('form');
+                form.submit(); // Submit the form programmatically
+            } else {
+                console.error('Editor is not initialized yet.');
+            }
+        });
+    </script> *@
+}

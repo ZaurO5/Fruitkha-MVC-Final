@@ -1,0 +1,16 @@
+﻿@using Business.ViewModels.News
+@model NewsDetailsVM
+
+<ul class="container">
+	<img src="~/assets/img/@Model.Photo" />
+	<br />
+	<br />
+	<div class="news-text-box">
+		<h3><a href="single-news.html">@Model.Title</a></h3>
+		<p class="blog-meta">
+			<span class="date">@Model.CreatedAt.ToString("MMM dd, yyyy")</span>
+		</p>
+		<p class="excerpt">@Model.Body</p>
+	</div>
+	<a asp-action="Index" asp-controller="News" class="btn btn-danger">Back</a>
+</ul>

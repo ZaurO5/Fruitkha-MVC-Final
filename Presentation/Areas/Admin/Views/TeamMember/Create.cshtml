@@ -1,0 +1,28 @@
+﻿@using Business.ViewModels.TeamMember
+@model TeamMemberCreateVM
+
+<form enctype="multipart/form-data" method="post" asp-action="Create" asp-controller="TeamMember">
+    <div class="form-group">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" placeholder="Enter name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Surname" class="form-label"></label>
+        <input asp-for="Surname" class="form-control" placeholder="Enter surname" />
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Position" class="form-label"></label>
+        <input asp-for="Position" class="form-control" placeholder="Enter position" />
+        <span asp-validation-for="Position" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Photo" class="form-label"></label>
+        <input asp-for="Photo" class="form-control" placeholder="Select Photo" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Create</button>
+    <a asp-action="Index" asp-controller="TeamMember" class="btn btn-danger mt-3">Back</a>
+</form>

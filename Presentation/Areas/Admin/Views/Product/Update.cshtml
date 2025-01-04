@@ -1,0 +1,44 @@
+﻿@using Business.ViewModels.Product
+@model ProductUpdateVM
+
+<form enctype="multipart/form-data" method="post" asp-action="Update" asp-controller="Product">
+	<div class="form-group">
+		<label asp-for="Title" class="form-label"></label>
+		<input asp-for="Title" class="form-control" placeholder="Enter title" />
+		<span asp-validation-for="Title" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Description" class="form-label"></label>
+		<textarea asp-for="Description" class="form-control" placeholder="Enter Desription"></textarea>
+		<span asp-validation-for="Description" class="text-danger"></span>
+	</div>
+	<br />
+	<div class="form-group">
+		<label asp-for="Price" class="form-label"></label>
+		<input asp-for="Price" class="form-control" placeholder="Enter Price" />
+		<span asp-validation-for="Price" class="text-danger"></span>
+	</div>
+	<br />
+	<div class="form-group">
+		<label asp-for="StockCount" class="form-label"></label>
+		<input asp-for="StockCount" class="form-control" placeholder="Enter stock count" />
+		<span asp-validation-for="StockCount" class="text-danger"></span>
+	</div>
+	<br />
+	<div class="form-group">
+		<label asp-for="Photo" class="form-label"></label>
+		<input asp-for="Photo" class="form-control" placeholder="Select Photo" />
+		<span asp-validation-for="Photo" class="text-danger"></span>
+	</div>
+	<div>
+		<img class="w-25" src="~/assets/img/@Model.PhotoName" alt="Alternate Text" />
+	</div>
+	<br />
+	<div class="form-group last mb-4">
+		<label asp-for="Categories" class="form-label"></label>
+		<select asp-for="CategoryIds" asp-items="@Model.Categories" class="form-select" multiple></select>
+		<span asp-validation-for="CategoryIds"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Update</button>
+	<a class="btn btn-danger" asp-action="Index" asp-controller="Product">Back</a>
+</form>

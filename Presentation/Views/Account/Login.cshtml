@@ -1,0 +1,52 @@
+﻿@using Business.ViewModels.Account
+@model AccountLoginVM
+
+@{
+    Layout = "_SecondLayout";
+    var returnUrl = Context.Request.Query["returnUrl"];
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="mb-4">
+            <h3>Login</h3>
+            <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+        </div>
+        <form asp-action="Login" asp-controller="Account" method="post">
+            <input type="hidden" asp-for="ReturnUrl" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group first">
+                <input asp-for="Email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group last mb-4">
+                <input asp-for="Password" class="form-control" placeholder="Password">
+            </div>
+            <div class="d-flex mb-3 align-items-center">
+                <label class="control control--checkbox mb-0">
+                    <span class="caption">Remember me</span>
+                    <input type="checkbox" checked="checked" />
+                    <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a asp-action="ForgetPassword" asp-controller="Account" class="forgot-pass">Forgot Password</a></span>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a asp-controller="Account" asp-action="Register" class="forgot-pass">Don't you have account? Register</a>
+            </div>
+            <button type="submit" class="btn text-white btn-block btn-primary mt-3">Login</button>
+
+            <span class="d-block text-left my-4 text-muted"> or sign in with</span>
+
+            <div class="social-login">
+                <a href="#" class="facebook">
+                    <span class="icon-facebook mr-3"></span>
+                </a>
+                <a href="#" class="twitter">
+                    <span class="icon-twitter mr-3"></span>
+                </a>
+                <a href="#" class="google">
+                    <span class="icon-google mr-3"></span>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@using Business.ViewModels.Product
+@model ProductIndexVM
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Products</h1>
+    <a class="btn btn-primary" asp-action="Create" asp-controller="Product">Create</a>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Categories</th>
+            <th scope="col">Price</th>
+            <th scope="col">Stock Count</th>
+            <th scope="col">Image</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Modified At</th>
+            <th scope="col" class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.Title</td>
+                <td>
+                    @foreach (var category in product.ProductCategories)
+                    {
+                        <p>@category.Category.Name</p>
+                    }
+                </td>
+                <td>@product.Price</td>
+                <td>@product.StockCount</td>
+                <td>
+                    <img src="~/assets/img/@product.Photo" style="width: 80px; height: 100px;">
+                </td>
+                <td>
+                    @product.CreatedAt.ToString("dd:MM:yyyy HH:mm")
+                </td>
+                <td>
+                    @product.ModifiedAt
+                </td>
+                <td class="text-center d-flex justify-content-center">
+                    <a class="btn btn-success mx-2" asp-controller="Product" asp-action="Update" asp-route-id="@product.Id">Update</a>
+                    <form method="post" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

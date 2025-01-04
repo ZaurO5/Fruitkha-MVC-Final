@@ -1,0 +1,46 @@
+﻿@using Business.ViewModels.TeamMember
+@model TeamMemberIndexVM
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Team Members</h1>
+    <a class="btn btn-primary" asp-action="Create" asp-controller="TeamMember">Create</a>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Position</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Modified At</th>
+            <th scope="col" class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var teamMember in Model.TeamMembers)
+        {
+            <tr>
+                <td>
+                    <img src="~/assets/img/@teamMember.Photo" style="width: 80px; height: 100px;">
+                </td>
+                <td>@teamMember.Name</td>
+                <td>@teamMember.Surname</td>
+                <td>@teamMember.Position</td>
+                <td>
+                    @teamMember.CreatedAt.ToString("dd:MM:yyyy HH:mm")
+                </td>
+                <td>
+                    @teamMember.ModifiedAt
+                </td>
+                <td class="text-center d-flex justify-content-center">
+                    <a class="btn btn-success mx-2" asp-controller="TeamMember" asp-action="Update" asp-route-id="@teamMember.Id">Update</a>
+                    <form method="post" asp-controller="TeamMember" asp-action="Delete" asp-route-id="@teamMember.Id">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

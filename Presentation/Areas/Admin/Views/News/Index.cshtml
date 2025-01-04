@@ -1,0 +1,45 @@
+﻿@using Business.ViewModels.News
+@model NewsIndexVM
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">News</h1>
+    <a class="btn btn-primary" asp-action="Create" asp-controller="News">Create</a>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Body</th>
+            <th scope="col">Image</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Modified At</th>
+            <th scope="col" class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var news in Model.News)
+        {
+            <tr>
+                <td>@news.Title</td>
+                <td>@news.Body.Substring(0, 50)...</td>
+                <td>
+                    <img src="~/assets/img/@news.Photo" style="width: 80px; height: 100px;">
+                </td>
+                <td>
+                    @news.CreatedAt.ToString("dd:MM:yyyy HH:mm")
+                </td>
+                <td>
+                    @news.ModifiedAt
+                </td>
+                <td class="text-center d-flex justify-content-center">
+                    <a asp-action="Details" asp-controller="News" asp-route-id="@news.Id" class="btn btn-primary">Details</a>
+                    <a class="btn btn-success mx-2" asp-controller="News" asp-action="Update" asp-route-id="@news.Id">Update</a>
+                    <form method="post" asp-controller="News" asp-action="Delete" asp-route-id="@news.Id">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
