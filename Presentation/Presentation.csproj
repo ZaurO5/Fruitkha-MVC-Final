@@ -9,18 +9,16 @@
   <ItemGroup>
     <Compile Remove="Areas\Admin\Models\**" />
     <Compile Remove="Models\**" />
+    <Compile Remove="wwwroot\login-assets\**" />
     <Content Remove="Areas\Admin\Models\**" />
     <Content Remove="Models\**" />
+    <Content Remove="wwwroot\login-assets\**" />
     <EmbeddedResource Remove="Areas\Admin\Models\**" />
     <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="wwwroot\login-assets\**" />
     <None Remove="Areas\Admin\Models\**" />
     <None Remove="Models\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\login-assets\css\.DS_Store" />
-    <None Include="wwwroot\login-assets\fonts\.DS_Store" />
-    <None Include="wwwroot\login-assets\images\.DS_Store" />
+    <None Remove="wwwroot\login-assets\**" />
   </ItemGroup>
 
   <ItemGroup>

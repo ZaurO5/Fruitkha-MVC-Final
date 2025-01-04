@@ -1,41 +1,57 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="~/login-assets/fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="~/login-assets/css/owl.carousel.min.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/login-assets/css/bootstrap.min.css">
-
-    <!-- Style -->
-    <link rel="stylesheet" href="~/login-assets/css/style.css">
-
-    <title>Login #8</title>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="~/login/assets/images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/login/assets/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/login/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/login/assets/vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/login/assets/vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/login/assets/vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/login/assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/login/assets/css/main.css">
+	<!--===============================================================================================-->
 </head>
 <body>
 
-    <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 order-md-2">
-                    <img src="~/login-assets/images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
-                </div>
-                <div class="col-md-6 contents">
-                    @RenderBody()
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="~/login/assets/images/img-01.png" alt="IMG">
+				</div>
+				@RenderBody()
+			</div>
+		</div>
+	</div>
 
-    <script src="~/login-assets/js/jquery-3.3.1.min.js"></script>
-    <script src="~/login-assets/js/popper.min.js"></script>
-    <script src="~/login-assets/js/bootstrap.min.js"></script>
-    <script src="~/login-assets/js/main.js"></script>
+
+
+	<!--===============================================================================================-->
+	<script src="~/login/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/login/assets/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/login/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/login/assets/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/login/assets/vendor/tilt/tilt.jquery.min.js"></script>
+	<script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="~/login/assets/js/main.js"></script>
+
 </body>
 </html>

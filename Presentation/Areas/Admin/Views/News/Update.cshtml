@@ -28,31 +28,16 @@
 
 @section Styles {
     <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.css" />
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.css" />
 }
 
 @section Scripts {
-    <script src="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.umd.js"></script>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.js"></script>
     <script>
-        const {
-            ClassicEditor,
-            Essentials,
-            Bold,
-            Italic,
-            Font,
-            Paragraph
-        } = CKEDITOR;
-
         ClassicEditor
-            .create(document.querySelector('#Body'), {
-                licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjU0MTExOTksImp0aSI6IjVkMTA5MjdmLTY0ZjYtNDdjOC1hOWEzLTNkMjdlNjY4M2UzMCIsImxpY2Vuc2VkSG9zdHMiOlsiMTI3LjAuMC4xIiwibG9jYWxob3N0IiwiMTkyLjE2OC4qLioiLCIxMC4qLiouKiIsIjE3Mi4qLiouKiIsIioudGVzdCIsIioubG9jYWxob3N0IiwiKi5sb2NhbCJdLCJ1c2FnZUVuZHBvaW50IjoiaHR0cHM6Ly9wcm94eS1ldmVudC5ja2VkaXRvci5jb20iLCJkaXN0cmlidXRpb25DaGFubmVsIjpbImNsb3VkIiwiZHJ1cGFsIl0sImxpY2Vuc2VUeXBlIjoiZGV2ZWxvcG1lbnQiLCJmZWF0dXJlcyI6WyJEUlVQIiwiQk9YIl0sInZjIjoiNTJlNDQwMWYifQ.YsaPRFTmxGQualqtRyI5zIl-YyjZkPR-7iJaivG-05IH9hhMXpFokyKxxdbJDx-8qOjV1LwpMZ_WEIsI4lq7eQ',
-                plugins: [Essentials, Bold, Italic, Font, Paragraph],
-                toolbar: [
-                    'undo', 'redo', '|', 'bold', 'italic', '|',
-                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
-                ],
-            })
-            .then( /* ... */)
-            .catch( /* ... */);
+            .create(document.querySelector('textarea[name="Body"]'))
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 }

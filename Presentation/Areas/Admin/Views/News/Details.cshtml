@@ -10,7 +10,7 @@
 		<p class="blog-meta">
 			<span class="date">@Model.CreatedAt.ToString("MMM dd, yyyy")</span>
 		</p>
-		<p class="excerpt">@Model.Body</p>
+		<p class="excerpt">@Html.Raw(Model.Body)</p>
 	</div>
 	<a asp-action="Index" asp-controller="News" class="btn btn-danger">Back</a>
 </ul>

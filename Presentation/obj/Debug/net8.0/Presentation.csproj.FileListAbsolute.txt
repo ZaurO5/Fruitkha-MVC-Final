@@ -546,3 +546,4 @@ C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Presentation\obj\Debug\ne
 C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Presentation\obj\Debug\net8.0\Presentation.pdb
 C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Presentation\obj\Debug\net8.0\Presentation.genruntimeconfig.cache
 C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Presentation\obj\Debug\net8.0\ref\Presentation.dll
+C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Presentation\obj\Debug\net8.0\Presentation.sourcelink.json

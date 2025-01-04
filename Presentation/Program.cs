@@ -46,7 +46,7 @@ builder.Services.AddSingleton<IEmailService, EmailService>();
 builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 #endregion
 
-#region Data
+#region Repositories
 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderProductRepository, OrderProductRepository>();
@@ -82,19 +82,15 @@ builder.Services.AddHttpContextAccessor();
 #region App
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -108,7 +104,6 @@ using (var scope = app.Services.CreateScope())
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}");

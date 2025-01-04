@@ -33,3 +33,4 @@ C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Data\obj\Debug\net8.0\ref
 C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Data\obj\Debug\net8.0\Data.pdb
 C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
 C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Data\obj\Debug\net8.0\ref\Data.dll
+C:\Users\User\OneDrive\Desktop\Zaur\Etc\Fruikth-master\Data\obj\Debug\net8.0\Data.sourcelink.json
