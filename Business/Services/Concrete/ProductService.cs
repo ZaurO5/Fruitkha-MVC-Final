@@ -70,7 +70,7 @@ public class ProductService : IProductService
         var product = await _productRepository.GetProductByTitleAsync(model.Title);
         if (product is not null)
         {
-            _modelState.AddModelError("Product", "This product has already exists");
+            _modelState.AddModelError("Product", "Product already exist");
             return false;
         }
 
@@ -79,14 +79,14 @@ public class ProductService : IProductService
             var category = await _categoryService.GetAsync(categoryId);
             if (category is null)
             {
-                _modelState.AddModelError("CategoryIds", "Category isn't available");
+                _modelState.AddModelError("CategoryIds", "Category Unavailable");
                 return false;
             } 
         }
 
         if (!_fileService.IsImage(model.Photo.ContentType))
         {
-            _modelState.AddModelError("Photo", "The image is not in the correct format");
+            _modelState.AddModelError("Photo", "Incorrect format");
             return false;
         }
 
@@ -154,14 +154,14 @@ public class ProductService : IProductService
         var product = await _productRepository.GetProductWithCategoriesAsync(id);
         if (product is null)
         {
-            _modelState.AddModelError(string.Empty, "This product is not available");
+            _modelState.AddModelError(string.Empty, "This product is Unavailable");
             return false;
         }
 
         var existProduct = await _productRepository.GetProductByTitleAsync(model.Title);
         if (existProduct is not null && existProduct.Id != id)
         {
-            _modelState.AddModelError("Name", "This product has already existed");
+            _modelState.AddModelError("Name", "Product already exist");
             return false;
         }
 
@@ -179,7 +179,7 @@ public class ProductService : IProductService
         {
             if (!_fileService.IsImage(model.Photo.ContentType))
             {
-                _modelState.AddModelError("Photo", "The image is not in the correct format");
+                _modelState.AddModelError("Photo", "Incorrect format");
                 return false;
             }
 

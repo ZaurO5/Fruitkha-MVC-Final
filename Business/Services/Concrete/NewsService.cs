@@ -60,13 +60,13 @@ public class NewsService : INewsService
         var news = await _newsRepository.GetNewsByTitle(model.Title);
         if (news is not null)
         {
-            _modelState.AddModelError("News", "This news is available");
+            _modelState.AddModelError("News", "News is Unavailable");
             return false;
         }
 
         if (!_fileService.IsImage(model.Photo.ContentType))
         {
-            _modelState.AddModelError("Photo", "The image is not in the correct format");
+            _modelState.AddModelError("Photo", "Incorrect format");
             return false;
         }
 
@@ -114,14 +114,14 @@ public class NewsService : INewsService
         var news = await _newsRepository.GetAsync(id);
         if (news is null)
         {
-            _modelState.AddModelError("News", "This news is not available");
+            _modelState.AddModelError("News", "News Unavailable");
             return false;
         }
 
         var existNews = await _newsRepository.GetNewsByTitle(model.Title);
         if (existNews is not null && existNews.Id != id)
         {
-            _modelState.AddModelError("Title", "This news has already existed");
+            _modelState.AddModelError("Title", "News already exist");
             return false;
         }
 
@@ -133,7 +133,7 @@ public class NewsService : INewsService
         {
             if (!_fileService.IsImage(model.Photo.ContentType))
             {
-                _modelState.AddModelError("Photo", "The image is not in the correct format");
+                _modelState.AddModelError("Photo", "Incorrect format");
                 return false;
             }
 

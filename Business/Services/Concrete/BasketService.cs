@@ -59,10 +59,10 @@ public class BasketService : IBasketService
 	public async Task<(int statusCode, string description)> AddProductAsync(int productId)
 	{
 		var user = await _userManager.GetUserAsync(_actionContextAccessor.ActionContext.HttpContext.User);
-		if (user is null) return (401, "Product couldn't be added");
+		if (user is null) return (401, "Product cannot be added");
 
 		var product = await _productRepository.GetAsync(productId);
-		if (product is null) return (404, "Product couldn't be added");
+		if (product is null) return (404, "Product cannot be added");
 
 		if (product.StockCount == 0) return (400, "Out of stock");
 
@@ -101,16 +101,16 @@ public class BasketService : IBasketService
 
 
 		await _unitOfWork.CommitAsync();
-		return (200, "The product was successfully added to the basket");
+		return (200, "Successfully added");
 	}
 
 	public async Task<(int statusCode, string description)> UpdateCartAsync(List<BasketUpdateVM> updatedProducts)
 	{
 		var user = await _userManager.GetUserAsync(_actionContextAccessor.ActionContext.HttpContext.User);
-		if (user is null) return (401, "Product couldn't be added");
+		if (user is null) return (401, "Product cannot be added");
 
 		var basket = await _basketRepository.GetBasketByUserId(user.Id);
-		if (basket is null) return (404, "User's basket not found");
+		if (basket is null) return (404, "Basket not found");
 
 		foreach (var product in updatedProducts)
 		{
@@ -135,13 +135,13 @@ public class BasketService : IBasketService
 	public async Task<(int statusCode, string description)> DeleteAsync(int id)
 	{
 		var user = await _userManager.GetUserAsync(_actionContextAccessor.ActionContext.HttpContext.User);
-		if (user is null) return (401, "Product couldn't be added");
+		if (user is null) return (401, "Product cannot be added");
 
 		var basketProduct = await _basketProductRepository.GetByProductIdAndUserId(id, user.Id);
 		if (basketProduct is null) return (404, "Product not found");
 
 		if (basketProduct.Basket.UserId != user.Id)
-			return (400, "The product could not be deleted");
+			return (400, "cannot delete the product");
 
 		_basketProductRepository.Delete(basketProduct);
 		await _unitOfWork.CommitAsync();

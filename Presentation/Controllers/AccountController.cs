@@ -36,7 +36,7 @@ public class AccountController : Controller
 
     public async Task<IActionResult> ConfirmEmail(string email, string token)
     {
-        var IsSucceeded = await _accountService.ConfirmEmailAsync(email, token);
+        var IsSucceeded = await _accountService.ConfirmEmail(email, token);
         if (IsSucceeded) return RedirectToAction(nameof(Login));
 
         return BadRequest("Confirmation failed");

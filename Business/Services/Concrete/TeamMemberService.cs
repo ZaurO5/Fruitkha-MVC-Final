@@ -47,7 +47,7 @@ public class TeamMemberService : ITeamMemberService
 
         if (!_fileService.IsImage(model.Photo.ContentType))
         {
-            _modelState.AddModelError("Photo", "The image is not in the correct format");
+            _modelState.AddModelError("Photo", "Incorrect format");
             return false;
         }
 
@@ -97,7 +97,7 @@ public class TeamMemberService : ITeamMemberService
 		var teamMember = await _teamMemberRepository.GetAsync(id);
 		if (teamMember is null)
 		{
-			_modelState.AddModelError(string.Empty, "This product is not available");
+			_modelState.AddModelError(string.Empty, "product is Unavailable");
 			return false;
 		}
 
@@ -110,7 +110,7 @@ public class TeamMemberService : ITeamMemberService
 		{
 			if (!_fileService.IsImage(model.Photo.ContentType))
 			{
-				_modelState.AddModelError("Photo", "The image is not in the correct format");
+				_modelState.AddModelError("Photo", "Incorrect format");
 				return false;
 			}
 

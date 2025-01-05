@@ -48,7 +48,7 @@ public class CategoryService : ICategoryService
         var category = await _categoryRepository.GetByNameAsync(model.Name);
         if (category is not null)
         {
-            _modelState.AddModelError("Name", "This category is already existed");
+            _modelState.AddModelError("Name", "Category already exist");
             return false;
         }
 
@@ -85,14 +85,14 @@ public class CategoryService : ICategoryService
         var category = await _categoryRepository.GetAsync(id);
         if (category is null) 
         {
-            _modelState.AddModelError(string.Empty, "This category is not available");
+            _modelState.AddModelError(string.Empty, "Category is Unavailable");
             return false;
         }
 
         var existCategory = await _categoryRepository.GetByNameAsync(model.Name);
         if (existCategory is not null && existCategory.Id != id)
         {
-            _modelState.AddModelError("Name", "This category is already existed");
+            _modelState.AddModelError("Name", "Category already exist");
             return false;
         }
 

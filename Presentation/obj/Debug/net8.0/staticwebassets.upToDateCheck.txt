@@ -1913,6 +1913,7 @@ wwwroot\assets\img\2adec206-bfee-4c37-a79d-18ccd83371ba_team-3.jpg
 wwwroot\assets\img\2f088ea3-e057-4e7a-a1ee-de2bff33d839_news-bg-2.jpg
 wwwroot\assets\img\35a64eee-987f-408d-af44-cd45d1f45b28_news-bg-1.jpg
 wwwroot\assets\img\389337ec-9b32-48c5-8f50-33fb4df8d8b7_product-img-2.jpg
+wwwroot\assets\img\3caf01af-d78e-4ba4-ac94-c9656a4c5a88_team-3.jpg
 wwwroot\assets\img\405a2a96-f191-46ce-aaeb-7acc874fcfb5_team-2.jpg
 wwwroot\assets\img\40965275-7e8a-46bc-8f4b-03ff82efb2f9_news-1.jpeg
 wwwroot\assets\img\42ac0d3b-fd38-4c03-980d-9243fc9e0784_product-img-4.jpg
@@ -1933,11 +1934,13 @@ wwwroot\assets\img\99a2e180-36ee-450c-abcf-7dd87564425c_member2.jpeg
 wwwroot\assets\img\a.jpg
 wwwroot\assets\img\a0657a42-469a-43d7-8bea-d1deebc2b131_news-bg-1.jpg
 wwwroot\assets\img\a70b6fe4-9385-4459-8064-075825a9eeb4_product-img-1.jpg
+wwwroot\assets\img\aa0a9071-6dbe-4f16-b083-feb7a8ac5858_news-bg-2.jpg
 wwwroot\assets\img\abt.jpg
 wwwroot\assets\img\adaf5e37-6295-4c1c-90e4-2a7defc6c66b_product-img-3.jpg
 wwwroot\assets\img\avaters\avatar1.png
 wwwroot\assets\img\avaters\avatar2.png
 wwwroot\assets\img\avaters\avatar3.png
+wwwroot\assets\img\b9544815-298d-436e-8e26-1f4abd7fd4b0_product-img-3.jpg
 wwwroot\assets\img\b98c5d6e-0029-4962-a07b-600a55e0f4b6_product-img-4.jpg
 wwwroot\assets\img\bcd0d37c-32e9-4720-affe-2f0194ec07b0_member1.jpeg
 wwwroot\assets\img\breadcrumb-bg.jpg

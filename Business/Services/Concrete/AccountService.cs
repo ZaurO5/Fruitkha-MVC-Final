@@ -73,13 +73,13 @@ public class AccountService : IAccountService
         var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
         var httpContext = _httpContextAccessor.HttpContext;
         var urlHelper = _urlHelperFactory.GetUrlHelper(new ActionContext(httpContext, httpContext.GetRouteData(), new Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor()));
-        var url = urlHelper.Action(nameof(ConfirmEmailAsync), "Account", new { token, email = user.Email }, httpContext.Request.Scheme);
+        var url = urlHelper.Action(nameof(ConfirmEmail), "Account", new { token, email = user.Email }, httpContext.Request.Scheme);
         _emailService.SendMessage(new Message(new List<string> { user.Email }, "Email Confirmation", url));
 
         return true;
     }
      
-    public async Task<bool> ConfirmEmailAsync(string email, string token)
+    public async Task<bool> ConfirmEmail(string email, string token)
     {
         var user = await _userManager.FindByEmailAsync(email);
         if (user is null) return false;
@@ -98,14 +98,14 @@ public class AccountService : IAccountService
         var user = await _userManager.FindByEmailAsync(model.Email);
         if (user is null)
         {
-            _modelState.AddModelError(string.Empty, "Email or Password is wrong");
+            _modelState.AddModelError(string.Empty, "Wrong Email or Password");
             return (false, null);
         }
 
         var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
         if (!result.Succeeded)
         {
-            _modelState.AddModelError(string.Empty, "Email or Password is wrong");
+            _modelState.AddModelError(string.Empty, "Wrong Email or Password");
             return (false, null);
         }
 
@@ -139,7 +139,7 @@ public class AccountService : IAccountService
         var user = await _userManager.FindByNameAsync(model.Email);
         if (user is null)
         {
-            _modelState.AddModelError("Password", "It was not possible to update the password");
+            _modelState.AddModelError("Password", "Impossible to update the password");
             return false;
         }
 
